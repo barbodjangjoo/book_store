@@ -12,6 +12,7 @@ class Book(models.Model):
 
     price = models.PositiveIntegerField()
     is_active = models.BooleanField(default=True)
+    image = models.ImageField(upload_to='books/books_cover/', blank=True)
 
     def __str__(self):
         return self.title
