@@ -13,3 +13,17 @@ django-crispy-forms==2.3
 pillow==10.4.0
 python-decouple==3.8
 sqlparse==0.5.1
+asgiref==3.8.1
+certifi==2024.7.4
+charset-normalizer==3.3.2
+crispy-bootstrap5==2024.2
+Django==5.1
+django-crispy-forms==2.3
+django-rosetta==0.10.0
+idna==3.7
+pillow==10.4.0
+polib==1.2.0
+python-decouple==3.8
+requests==2.32.3
+sqlparse==0.5.1
+urllib3==2.2.2
