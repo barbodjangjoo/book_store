@@ -10,14 +10,18 @@
             {% for book in books %}
                 <div class="card m-2" style="max-width: 45%">
                     <div class="row g-0 h-100" dir="rtl">
-                        <div class="col-md-4">
-                            <img href="{{book.get_absolute_url}}" src="{{book.image.url}}"
-                                class="img-fluid rounded-start" alt="...">
+                        <div  class="col-md-4">
+                            <a href="{{book.get_absolute_url}}">
+                                <img src="{{book.image.url}}"
+                                    class="img-fluid rounded-start" alt="...">
+                            </a>
                         </div>
                         <div class="col-md-8 h-100">
                             <div class="d-flex flex-column justify-content-between h-100">
                                 <div class="card-body">
-                                    <h3 href="{{book.get_absolute_url}}" class="card-title"><strong>{{book.title}}</strong></h3>
+                                <a href="{{book.get_absolute_url}}">
+                                    <h3 class="card-title"><strong>{{book.title}}</strong></h3>
+                                </a>
                                     <p class="card-text pt-3">{{book.short_description}}</p>
                                     <p class="text-muted">{% trans "author" %}:{{book.author}}</p>
                                 </div>

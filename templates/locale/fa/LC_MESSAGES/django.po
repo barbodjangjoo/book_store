@@ -9,21 +9,34 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-12 11:10+0000\n"
-"PO-Revision-Date: 2024-08-12 11:10+0000\n"
-"Last-Translator:   <admin@admin.com>\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Translated-Using: django-rosetta 0.10.0\n"
+#: templates/_base.html:24
+msgid "Book Store"
+msgstr ""
 
-#: books/templates/books/book_detail.html:21
-#: books/templates/books/book_list.html:26
-msgid "author"
-msgstr "نویسنده"
+#: templates/_base.html:31
+msgid "Home"
+msgstr "خانه"
 
-#: books/templates/books/book_detail.html:25
-msgid "$"
-msgstr "تومان"
+#: templates/_base.html:32
+msgid "Add Book"
+msgstr "اضافه کردن کتاب"
+
+#: templates/_base.html:36
+msgid "Welcome"
+msgstr "خوش آمدید"
+
+#: templates/_base.html:37
+msgid "Exit"
+msgstr "خروج"
+
+#: templates/_base.html:52
+msgid "Barbod Resume"
+msgstr "رزومه باربد"

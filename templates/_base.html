@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    {% load i18n %}
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,18 +21,25 @@
                 <img src="icons/book.png" alt="" height="30"
                     class="d-inline-block align-text-top">
             </a>
-            <a class="navbar-brand mx-3" href="#">کتاب یار</a>
+            <a class="navbar-brand mx-3" href="#">{% translate "Book Store" %}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">خانه</a>
-                    <a class="nav-link" href="#">اضافه کردن کتاب</a>
+                    <a class="nav-link active" aria-current="page" href="#">{% translate "Home" %}</a>
+                    <a class="nav-link" href="#">{% translate "Add Book" %}</a>
                 </div>
             </div>
-            <div class="mx-2 text-white">خوش آمدی محمدهادی | <a class="link-light text-decoration-none" href="#">خروج</a></div>
+            {% if user.isauthenticated %}
+                <div class="mx-2 text-white">{% translate "Welcome" %}{{user.username}}| <a class="link-light text-decoration-none" 
+                        href="#">{% translate "Exit" %}
+                    </a>
+                </div>
+            {% else %}
+
+            {% endif %}
         </div>
     </nav>
 
@@ -41,7 +49,7 @@
 
 <footer class="bg-light text-center text-lg-start mt-5">
     <div class="text-center bg-grey">
-        <p> <a class="text-dark" href="" target="_blank">Barbod Resume</a></p>
+        <p> <a class="text-dark" href="" target="_blank">{% translate "Barbod Resume" %}</a></p>
     </div>
 </footer>
     
