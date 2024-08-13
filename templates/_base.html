@@ -21,24 +21,29 @@
                 <img src="icons/book.png" alt="" height="30"
                     class="d-inline-block align-text-top">
             </a>
-            <a class="navbar-brand mx-3" href="#">{% translate "Book Store" %}</a>
+            <a class="navbar-brand mx-3" href="{% url "book_list" %}">{% translate "Book Store" %}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">{% translate "Home" %}</a>
-                    <a class="nav-link" href="#">{% translate "Add Book" %}</a>
+                    <a class="nav-link active" aria-current="page" href="{% url "book_list" %}">{% translate "Home" %}</a>
                 </div>
             </div>
             {% if user.isauthenticated %}
-                <div class="mx-2 text-white">{% translate "Welcome" %}{{user.username}}| <a class="link-light text-decoration-none" 
-                        href="#">{% translate "Exit" %}
-                    </a>
-                </div>
+                <a class="nav-link" href="#">{% translate "Add Book" %}</a>
+                    <div class="mx-2 text-white">{% translate "Welcome" %}{{user.username}}| <form method="post" action="{% url "logout" %}">
+                            {% csrf_token %}
+                            <button type="submit">{% translate "Logout" %}</button>
+                        </form>
+                    </div>
             {% else %}
-
+                <div class="mx-2 text-white"><a class="link-light text-decoration-none" 
+                    href="{% url "login" %}">{% translate "Login" %}| <a class="link-light text-decoration-none" 
+                    href="{% url "signup" %}">{% translate "SignUp" %}
+                </a>
+        </div>
             {% endif %}
         </div>
     </nav>

@@ -6,17 +6,17 @@
 {% block page_title %}Signup{% endblock page_title %}
 
 {% block content %}
-<div class="d-flex justify-content-center mt-5">
-    <div class="col-xl-3 col-lg-4 col-md-5 col-sm-5 col-xs-6 bg-white m-3 m-sm-5 border rounded px-4 pt-4 pb-3 shadow">
-        <form method="post">
-            {% csrf_token %}
-            <h1 class="text-center">{% translate "SignUp" %}</h1>
-            {{form|crispy}}
-             <button type="submit" class="btn btn-success mt-3 w-100">{% translate "SignUp" %}</button>
-            <div class="line-with-middle-sep">
-            </div>
-            <a href="{% url "Login" %}" class="btn btn-primary mt-2 mb-3 w-100">{% translate "Login" %}</a>
-        </form>
+    <div class="d-flex justify-content-center mt-5">
+        <div class="col-xl-3 col-lg-4 col-md-5 col-sm-5 col-xs-6 bg-white m-3 m-sm-5 border rounded px-4 pt-4 pb-3 shadow">
+            <form method="post">
+                {% csrf_token %}
+                <h1 class="text-center">{% translate "SignUp" %}</h1>
+                {{form|crispy}}
+                <button type="submit" class="btn btn-success mt-3 w-100">{% translate "SignUp" %}</button>
+                <div class="line-with-middle-sep">
+                </div>
+                <a href="{% url "login" %}" class="btn btn-primary mt-2 mb-3 w-100">{% translate "Login" %}</a>
+            </form>
+        </div>
     </div>
-</div>
 {% endblock content %}
