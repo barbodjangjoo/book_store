@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-13 08:08+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: templates/registration/login.html:12 templates/registration/login.html:19
+#: templates/registration/password_reset_complete.html:7
+#: templates/registration/signup.html:18
+msgid "Login"
+msgstr ""
+
+#: templates/registration/login.html:16
+msgid "password_reset"
+msgstr "تغییر رمز"
+
+#: templates/registration/login.html:16
+msgid "forgot password"
+msgstr "فراموشی رمز"
+
+#: templates/registration/login.html:22 templates/registration/signup.html:13
+#: templates/registration/signup.html:15
+msgid "SignUp"
+msgstr "ثبت نام"
+
+#: templates/registration/password_change_done.html:6
+msgid "Your password changed successfully!"
+msgstr "پسورد شما با موفقیت عوض شد"
+
+#: templates/registration/password_change_done.html:7
+#: templates/registration/password_reset_done.html:7
+msgid "Home"
+msgstr "خانه"
+
+#: templates/registration/password_change_form.html:11
+msgid "Password Change"
+msgstr "تغییر رمز"
+
+#: templates/registration/password_change_form.html:13
+#: templates/registration/password_reset_confirm.html:12
+#: templates/registration/password_reset_form.html:15
+msgid "Submit"
+msgstr "تایید"
+
+#: templates/registration/password_reset_confirm.html:10
+#: templates/registration/password_reset_form.html:11
+msgid "Password Reset"
+msgstr "تغییر رمز"
+
+#: templates/registration/password_reset_done.html:6
+msgid "Email has been sent!"
+msgstr "ایمیل ارسال شد"
