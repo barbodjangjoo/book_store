@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.views import generic
 from django.contrib.auth import mixins
 from django.urls import reverse_lazy
+from django.contrib import messages
 
 
 from .models import Book, Comment
@@ -35,7 +36,9 @@ class CommentCreateView(mixins.LoginRequiredMixin, generic.CreateView):
     def form_valid(self, form):
         form.instance.book_id = self.kwargs['pk']
         form.instance.user_id = self.request.user.id
-        return super().form_valid(form)
+        response = super().form_valid(form)
+        messages.success(self.request, 'Comment added successfully!')
+        return response
 
     def get_success_url(self):
         return reverse_lazy('book_detail', kwargs={'pk': self.kwargs['pk']})

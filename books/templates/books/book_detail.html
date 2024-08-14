@@ -6,6 +6,15 @@
 {% block page_title %}{{book.title}}{% endblock page_title %}
 
 {% block content %}
+    <div class="alert alert-success" role="alert">
+        {%if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
 <div class="container mt-5">
     <div class="">
         <div class="">
