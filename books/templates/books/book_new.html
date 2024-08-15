@@ -10,7 +10,7 @@
                 <div class="card shadow my-3">
                     <h5 class="card-header bg-success text-light px-5">{% translate "Add new Book" %}</h5>
                     <div class="px-5 pt-3 pb-5">
-                        <form method="POST">
+                        <form method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
                             {{form|crispy}}
                             {% comment %} <div class="form-group py-2">

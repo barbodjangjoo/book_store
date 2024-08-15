@@ -52,3 +52,6 @@ class BookAddView(mixins.LoginRequiredMixin, generic.CreateView):
     model = Book
     fields = ['title', 'author', 'price', 'short_description', 'description', 'is_active', 'image',]
     template_name = 'books/book_new.html'
+    
+    def get_success_url(self):
+        return reverse_lazy('book_detail', kwargs={'pk': self.object.id})
