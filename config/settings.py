@@ -151,6 +151,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.CustomUser'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 LOGIN_REDIRECT_URL = 'book_list'
+LOGOUT_REDIRECT_URL = 'book_list'
 
 # Crispy forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

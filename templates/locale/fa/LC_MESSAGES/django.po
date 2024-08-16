@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-12 11:10+0000\n"
+"POT-Creation-Date: 2024-08-15 21:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
 #: templates/_base.html:24
 msgid "Book Store"
-msgstr ""
+msgstr "کتاب فروشی"
 
 #: templates/_base.html:31
 msgid "Home"
 msgstr "خانه"
 
-#: templates/_base.html:32
+#: templates/_base.html:35
 msgid "Add Book"
 msgstr "اضافه کردن کتاب"
 
@@ -33,10 +34,21 @@ msgstr "اضافه کردن کتاب"
 msgid "Welcome"
 msgstr "خوش آمدید"
 
-#: templates/_base.html:37
-msgid "Exit"
+#: templates/_base.html:38
+msgid "Logout"
 msgstr "خروج"
 
-#: templates/_base.html:52
+#: templates/_base.html:43
+msgid "Login"
+msgstr "ورود"
+
+#: templates/_base.html:44
+msgid "SignUp"
+msgstr "ثبت نام"
+
+#: templates/_base.html:57
 msgid "Barbod Resume"
 msgstr "رزومه باربد"
+
+#~ msgid "Exit"
+#~ msgstr "خروج"

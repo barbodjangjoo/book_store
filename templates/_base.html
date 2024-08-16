@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
+{% load i18n %}
 <head>
-    {% load i18n %}
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,12 +31,9 @@
                     <a class="nav-link active" aria-current="page" href="{% url "book_list" %}">{% translate "Home" %}</a>
                 </div>
             </div>
-            {% if user.isauthenticated %}
-                <a class="nav-link" href="#">{% translate "Add Book" %}</a>
-                    <div class="mx-2 text-white">{% translate "Welcome" %}{{user.username}}| <form method="post" action="{% url "logout" %}">
-                            {% csrf_token %}
-                            <button type="submit">{% translate "Logout" %}</button>
-                        </form>
+            {% if user.is_authenticated %}
+                <a class="text-white" href="{% url "book_add" %}">{% translate "Add Book" %}</a>
+                    <div class="mx-2 text-white">{% translate "Welcome" %} {{user.username}}| <form method="post" action="{% url "logout" %}">{% csrf_token %}<button type="submit">{% translate "Logout" %}</button></form>
                     </div>
             {% else %}
                 <div class="mx-2 text-white"><a class="link-light text-decoration-none" 

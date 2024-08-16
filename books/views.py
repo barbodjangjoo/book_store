@@ -31,7 +31,7 @@ class BookDetailView(generic.DetailView):
 class CommentCreateView(mixins.LoginRequiredMixin, generic.CreateView):
     model = Comment
     form_class = CommentForm
-    template_name = 'books/book_detail.html'  # Specify the template name
+    template_name = 'books/book_detail.html'
 
     def form_valid(self, form):
         form.instance.book_id = self.kwargs['pk']
@@ -55,3 +55,8 @@ class BookAddView(mixins.LoginRequiredMixin, generic.CreateView):
     
     def get_success_url(self):
         return reverse_lazy('book_detail', kwargs={'pk': self.object.id})
+    
+class BookDeleteView(generic.DeleteView):
+    model = Book
+    template_name = 'books/book_delete.html'
+    success_url = reverse_lazy('book_list')
