@@ -1,0 +1,74 @@
+{% extends "_base.html" %}
+{% load i18n %}
+{% block page_title %}Cart{% endblock page_title %}
+
+{% block content %}
+  <div class="container py-5">
+    <h1 class="display-4">{% translate "Cart Details" %}</h1>
+    <hr>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>{% translate "Book Title" %}</th>
+          <th>{% translate "Quantity" %}</th>
+          <th>{% translate "Total" %}</th>
+          <th>{% translate "Price" %}</th>
+          <th>{% translate "Actions" %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in cart %}
+          <tr>
+            <td class="product-thumbnail text-left">
+              <a href="{{item.book_obj.get_absolute_url}}">
+                <img src="{{ item.book_obj.image.url}}" 
+                class="img-thumbnail" 
+                alt="{{ item.book_obj.title }}" 
+                style="width: 50px; height: 50px;">
+                <img>
+              </a>
+            </td>
+            <td>
+              <a href="{{item.book_obj.get_absolute_url}}">
+              {{ item.book_obj.title }}
+              </a>
+            </td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.book_obj.price }}</td>
+            <td>{{ item.total_price }}</td>
+            <td>
+              <a href="{% url "cart_remove" item.book_obj.id%}" class="btn btn-danger btn-sm">{% translate "Remove" %}</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        {% comment %} <tr>
+          <th colspan="3">{% translate "Subtotal" %}</th>
+          <th>{{ cart.subtotal }}</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th colspan="3">{% translate "Tax (10%)" %}</th>
+          <th>{{ cart.tax }}</th>
+          <th></th>
+        </tr> {% endcomment %}
+        <tr>
+          <th colspan="3">{% translate "Total" %}</th>
+          <th>{{ cart.total }}</th>
+          <th></th>
+        </tr>
+      </tfoot>
+    </table>
+
+    <div class="row">
+      <div class="col-md-6">
+        <a href="{% url 'book_list' %}" class="btn btn-secondary">{% translate "Continue Shopping" %}</a>
+      </div>
+      <div class="col-md-6 text-end">
+        <a href="#" class="btn btn-primary">{% translate "Checkout" %}</a>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

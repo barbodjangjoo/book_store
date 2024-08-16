@@ -8,6 +8,7 @@ from django.contrib import messages
 
 from .models import Book, Comment
 from .forms import CommentForm
+from cart.forms import AddToCartBookForm
 
 class BookListView(generic.ListView):
     model = Book

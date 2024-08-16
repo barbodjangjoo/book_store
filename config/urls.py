@@ -26,5 +26,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
     path('', include('books.urls')),
+    path('cart/', include('cart.urls')),
     path('rosetta/', include('rosetta.urls')),
 ]+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

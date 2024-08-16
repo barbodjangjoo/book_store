@@ -43,6 +43,16 @@
                     {{book.description}}
                 </div>
             </div>
+            <form method="POST" action="{% url "add_to_cart" book.id %}">
+                {% csrf_token %}
+                <div class="quantity">
+                </div>
+                 <div class="d-flex justify-content-center">
+                    {% comment %} {{add_to_cart_form|crispy}} {% endcomment %}
+                     <input type="number" name="quantity" value="1" min="1" max="30">
+                     <button type="submit" class="btn btn-primary">{% translate "Add to Cart" %}</button>
+                </div>
+            </form>
             <a class="btn btn-warning" href="{% url "book_update" book.id %}">Edit</a>
             <a class="btn btn-danger" href="{% url "book_delete" book.id %}">Delete</a>
 
