@@ -23,14 +23,17 @@
             </a>
             <a class="navbar-brand mx-3" href="{% url "book_list" %}">{% translate "Book Store" %}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="{% url "book_list" %}">{% translate "Home" %}</a>
-                </div>
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="{% url "book_list" %}">{% translate "Home" %}</a>
             </div>
+        </div>
+        <a class="nav-link mx-2" href="{% url "cart_detail" %}">
+            <i class="fas fa-shopping-cart text-white">&#128722</i>
+        </a>
             {% if user.is_authenticated %}
                 <a class="text-white" href="{% url "book_add" %}">{% translate "Add Book" %}</a>
                     <div class="mx-2 text-white">{% translate "Welcome" %} {{user.username}}| <form method="post" action="{% url "logout" %}">{% csrf_token %}<button type="submit">{% translate "Logout" %}</button></form>
@@ -44,14 +47,22 @@
             {% endif %}
         </div>
     </nav>
-
+    <div class="alert alert-success" role="alert">
+        {%if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
     {% block content %}
     
     {% endblock content %}
 
 <footer class="bg-light text-center text-lg-start mt-5">
     <div class="text-center bg-grey">
-        <p> <a class="text-dark" href="" target="_blank">{% translate "Barbod Resume" %}</a></p>
+        <p> <a class="text-dark" href="https://github.com/barbodjangjoo" target="_blank">{% translate "Barbod Resume" %}</a></p>
     </div>
 </footer>
     
