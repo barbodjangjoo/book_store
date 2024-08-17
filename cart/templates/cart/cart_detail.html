@@ -34,7 +34,22 @@
               {{ item.book_obj.title }}
               </a>
             </td>
-            <td>{{ item.quantity }}</td>
+            <td>
+              <form method="post" action="{% url "cart_add" item.book_obj.id%}">
+                {% csrf_token %}
+                <div class="Quantity">
+                  <input 
+                  type="number"
+                  min="1"
+                  class ="quantity-input"
+                  value="{{ item.quantity }}"
+                  name="quantity"
+                  id="quantity">
+                  {{item.product_update_quantity_form.inplace}}
+                  <button type="submit" class=" btn btn-warning">&#x21bb</button>
+                </div>
+              </form>
+            </td>
             <td>{{ item.book_obj.price }}</td>
             <td>{{ item.total_price }}</td>
             <td>

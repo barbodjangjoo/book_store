@@ -43,7 +43,7 @@
                     {{book.description}}
                 </div>
             </div>
-            <form method="POST" action="{% url "add_to_cart" book.id %}">
+            <form method="POST" action="{% url "cart_add" book.id %}">
                 {% csrf_token %}
                 <div class="quantity">
                 </div>
