@@ -34,8 +34,10 @@
         <a class="nav-link mx-2" href="{% url "cart_detail" %}">
             <i class="fas fa-shopping-cart text-white">&#128722</i>
         </a>
-            {% if user.is_authenticated %}
+            {% if user.is_staff %}
                 <a class="text-white" href="{% url "book_add" %}">{% translate "Add Book" %}</a>
+            {% endif %}
+            {% if user.is_authenticated %}
                     <div class="mx-2 text-white">{% translate "Welcome" %} {{user.username}}| <form method="post" action="{% url "logout" %}">{% csrf_token %}<button type="submit">{% translate "Logout" %}</button></form>
                     </div>
             {% else %}
@@ -47,15 +49,15 @@
             {% endif %}
         </div>
     </nav>
-    <div class="alert alert-success" role="alert">
-        {%if messages %}
+    {%if messages %}
+        <div class="alert alert-success" role="alert">
             <ul>
                 {% for message in messages %}
                     <li>{{ message }}</li>
                 {% endfor %}
             </ul>
-        {% endif %}
-    </div>
+        </div>
+    {% endif %}
     {% block content %}
     
     {% endblock content %}
