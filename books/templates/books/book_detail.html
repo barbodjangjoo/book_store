@@ -53,8 +53,10 @@
                      <button type="submit" class="btn btn-primary">{% translate "Add to Cart" %}</button>
                 </div>
             </form>
-            <a class="btn btn-warning" href="{% url "book_update" book.id %}">Edit</a>
-            <a class="btn btn-danger" href="{% url "book_delete" book.id %}">Delete</a>
+            {% if user.is_staff %}
+                <a class="btn btn-warning" href="{% url "book_update" book.id %}">Edit</a>
+                <a class="btn btn-danger" href="{% url "book_delete" book.id %}">Delete</a>
+            {% endif %}
 
             {% for comment in comments %}
                 <div class="d-flex justify-content-center">

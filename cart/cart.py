@@ -45,7 +45,9 @@ class Cart:
         for book in books:
             cart[str(book.id)]['book_obj'] = book
 
+
         for item in cart.values():
+            item['total_price'] = item['book_obj'].price * item['quantity']
             yield item
 
     def __len__(self):
@@ -57,6 +59,5 @@ class Cart:
 
     def get_total_price(self):
         book_ids = self.cart.keys()
-        books = Book.objects.filter(id__in = book_ids)
 
-        return sum(book.price for book in books)
+        return sum(item['quantity']* item['book_obj'].price for item in self.cart.values())
