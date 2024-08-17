@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-17 16:54+0330\n"
+"PO-Revision-Date: 2024-08-17 13:27+0000\n"
+"Last-Translator:   <admin@admin.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: cart.py:28
+msgid "Product successfully added to cart"
+msgstr "محصول با موفقیت به سبد خرید اضافه شد"
+
+#: cart.py:37
+msgid "Product successfully Delete from your cart!"
+msgstr "محصول با موفقیت از سبد خرید حذف شد"
+
+#: templates/cart/cart_detail.html:7
+msgid "Cart Details"
+msgstr "جزیات سبد خرید"
+
+#: templates/cart/cart_detail.html:13
+msgid "Book Title"
+msgstr "عنوان کتاب"
+
+#: templates/cart/cart_detail.html:14
+msgid "Quantity"
+msgstr "تعداد"
+
+#: templates/cart/cart_detail.html:15 templates/cart/cart_detail.html:75
+msgid "Total"
+msgstr "مجموع"
+
+#: templates/cart/cart_detail.html:16
+msgid "Price"
+msgstr "قیمت"
+
+#: templates/cart/cart_detail.html:17
+msgid "Total Price"
+msgstr "قیمت نهایی"
+
+#: templates/cart/cart_detail.html:55 templates/cart/cart_detail.html:76
+msgid "&#x24"
+msgstr "تومان"
+
+#: templates/cart/cart_detail.html:57
+msgid "Remove"
+msgstr "پاک کردن"
+
+#: templates/cart/cart_detail.html:84
+msgid "Continue Shopping"
+msgstr "ادامه خرید "
+
+#: templates/cart/cart_detail.html:87
+msgid "Checkout"
+msgstr "پرداخت"

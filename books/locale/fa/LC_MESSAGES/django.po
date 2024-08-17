@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-15 21:17+0000\n"
-"PO-Revision-Date: 2024-08-15 21:23+0000\n"
+"POT-Creation-Date: 2024-08-17 16:54+0330\n"
+"PO-Revision-Date: 2024-08-17 13:25+0000\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,48 +19,54 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
-#: books/templates/books/book_delete.html:12
+#: templates/books/book_delete.html:12
 msgid "yes"
 msgstr "بله"
 
-#: books/templates/books/book_delete.html:18
-#: books/templates/books/book_new.html:33
+#: templates/books/book_delete.html:18 templates/books/book_new.html:33
 msgid "Tip"
 msgstr "راهنمایی"
 
-#: books/templates/books/book_delete.html:21
+#: templates/books/book_delete.html:21
 msgid "If you press yes it will DELETE book"
 msgstr "اگر بله را انتخاب کنید پست حذف خواهد شد"
 
-#: books/templates/books/book_detail.html:31
-#: books/templates/books/book_list.html:26
+#: templates/books/book_detail.html:23 templates/books/book_list.html:26
 msgid "author"
 msgstr "نویسنده"
 
-#: books/templates/books/book_detail.html:35
+#: templates/books/book_detail.html:27
 msgid "$"
 msgstr "تومان"
 
-#: books/templates/books/book_detail.html:52
+#: templates/books/book_detail.html:46
+msgid "Add to Cart"
+msgstr "اضافه به سبد خرید"
+
+#: templates/books/book_detail.html:57
 msgid "comments"
 msgstr "نظر ها"
 
-#: books/templates/books/book_detail.html:63
+#: templates/books/book_detail.html:68
 msgid "Enter Your Comment"
 msgstr "نظر خود را وارد کنید"
 
-#: books/templates/books/book_detail.html:67
+#: templates/books/book_detail.html:72
 msgid "Send"
 msgstr "ارسال"
 
-#: books/templates/books/book_new.html:11
+#: templates/books/book_new.html:11
 msgid "Add new Book"
 msgstr "اضافه کردن کتاب"
 
-#: books/templates/books/book_new.html:25
+#: templates/books/book_new.html:25
 msgid "submit"
 msgstr "تایید"
 
-#: books/templates/books/book_new.html:36
+#: templates/books/book_new.html:36
 msgid "Fill the field to add new Book"
 msgstr "فیلد هارا پر کنید تا کتاب جدید بوجود بیاید"
+
+#: views.py:42
+msgid "Comment added successfully!"
+msgstr "کامنت شما با موفقیت ثبت شد"
