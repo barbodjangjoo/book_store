@@ -8,7 +8,9 @@ django-crispy-forms==2.3
 django-rosetta==0.10.0
 idna==3.7
 pillow==10.4.0
+pkgconfig==1.5.5
 polib==1.2.0
+psycopg2-binary==2.9.9
 PyMySQL==1.1.1
 python-decouple==3.8
 requests==2.32.3

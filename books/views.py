@@ -15,6 +15,7 @@ class BookListView(generic.ListView):
     model = Book
     template_name = 'books/book_list.html'
     context_object_name= 'books'
+    paginate_by = 4
 
     def get_queryset(self):
         return Book.objects.filter(is_active = True)
@@ -47,12 +48,12 @@ class CommentCreateView(mixins.LoginRequiredMixin, generic.CreateView):
     
 class BookUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
     model = Book
-    fields = ['title', 'author', 'price', 'short_description', 'description', 'is_active', 'image',]
+    fields = ['title', 'author', 'price', 'description', 'is_active', 'image',]
     template_name = 'books/book_new.html'
 
 class BookAddView(mixins.LoginRequiredMixin, generic.CreateView):
     model = Book
-    fields = ['title', 'author', 'price', 'short_description', 'description', 'is_active', 'image',]
+    fields = ['title', 'author', 'price', 'description', 'is_active', 'image',]
     template_name = 'books/book_new.html'
     
     def get_success_url(self):

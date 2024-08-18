@@ -1,27 +1,17 @@
-version: '3'
+version: '26.0'
 
 services:
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python /code/manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/app
+      - .:/code
     ports:
-      - "8000:8000"
+      - 8000:8000
     depends_on:
-      - mysql
-    environment:
-      - DATABASE_URL=mysql://myuser:mypassword@mysql:3306/mydb
+      - db
 
-  mysql:
-    image: mysql:8.0
+  db:
+    image: postgres:14
     environment:
-      - MYSQL_ROOT_PASSWORD=mypassword
-      - MYSQL_DATABASE=mydb
-      - MYSQL_USER=myuser
-      - MYSQL_PASSWORD=mypassword
-    volumes:
-      - mysql-data:/var/lib/mysql
-
-volumes:
-  mysql-data:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"

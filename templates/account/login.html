@@ -12,14 +12,14 @@
                 <h1 class="text-center">{% translate "Login" %}</h1>
                 {{form|crispy}}
                 <div class="d-flex justify-content-between align-items-center">
-                    <div class="mt-2">
-                        <a class="text-decoration-none" href="{% url "password_reset" %}">{% translate "forgot password" %}</a>
-                    </div>
+                    {% comment %} <div class="mt-2">
+                        <a class="text-decoration-none" href="{% url "account_reset_password" %}">{% translate "forgot password" %}</a>
+                    </div> {% endcomment %}
                 </div>
                  <button type="submit" class="btn btn-success mt-3 w-100">{% translate "Login" %}</button>
                 <div class="line-with-middle-sep">
                 </div>
-                <a href="{% url "signup" %}" class="btn btn-primary mt-2 mb-3 w-100">{% translate "SignUp" %}</a>
+                <a href="{% url "account_signup" %}" class="btn btn-primary mt-2 mb-3 w-100">{% translate "SignUp" %}</a>
             </form>
         </div>
     </div>

@@ -38,12 +38,12 @@
                 <a class="text-white" href="{% url "book_add" %}">{% translate "Add Book" %}</a>
             {% endif %}
             {% if user.is_authenticated %}
-                    <div class="mx-2 text-white">{% translate "Welcome" %} {{user.username}}| <form method="post" action="{% url "logout" %}">{% csrf_token %}<button type="submit">{% translate "Logout" %}</button></form>
+                    <div class="mx-2 text-white">{% translate "Welcome" %} {{user.username}}| <form method="post" action="{% url "account_logout" %}">{% csrf_token %}<button type="submit">{% translate "Logout" %}</button></form>
                     </div>
             {% else %}
                 <div class="mx-2 text-white"><a class="link-light text-decoration-none" 
-                    href="{% url "login" %}">{% translate "Login" %}| <a class="link-light text-decoration-none" 
-                    href="{% url "signup" %}">{% translate "SignUp" %}
+                    href="{% url "account_login" %}">{% translate "Login" %}| <a class="link-light text-decoration-none" 
+                    href="{% url "account_signup" %}">{% translate "SignUp" %}
                 </a>
         </div>
             {% endif %}
