@@ -2,9 +2,10 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 
+from authors.models import Author
 class Book(models.Model):
     title = models.CharField(max_length=100)
-    author = models.CharField(max_length=100)
+    author = models.ForeignKey(Author, on_delete=models.PROTECT)
     description = models.TextField()
 
     datetime_created = models.DateTimeField(auto_now_add=True)
