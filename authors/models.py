@@ -1,3 +1,11 @@
 from django.db import models
+from django.urls import reverse
 
-# Create your models here.
+class author(models.Model):
+    image = models.ImageField(upload_to='authors/authors_cover')
+    name = models.CharField(max_length=100)
+    birth_date = models.DateTimeField()
+
+    bio = models.TextField()
+
+
