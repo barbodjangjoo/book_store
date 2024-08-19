@@ -10,7 +10,7 @@ class Book(models.Model):
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
 
-    price = models.PositiveIntegerField()
+    price = models.DecimalField(max_digits=6, decimal_places=2)
     is_active = models.BooleanField(default=True)
     image = models.ImageField(upload_to='books/books_cover/', blank=True)
 
