@@ -1,5 +1,5 @@
 from django.test import TestCase
-from django.contrib.auth.models import User
+from django.urls import reverse
 
 from .models import Book
 from authors.models import Author
@@ -37,5 +37,22 @@ class BookModelTest(TestCase):
     def test_book_str(self):
         self.assertEqual(str(self.book), "Test Book")
 
-    def test_book_get_absolute_url(self):
-        self.assertEqual(self.book.get_absolute_url(), "/1/")
+    def test_book_list_url(self):
+        respond = reverse('book_list')
+        self.assertEqual(respond, '/')
+
+    def test_book_detail_url(self):
+        respond = reverse('book_detail', kwargs={'pk': 1})
+        self.assertEqual(respond, '/1/')
+
+    def test_book_add_url(self):
+        respond = reverse('book_add')
+        self.assertEqual(respond, '/add/')
+
+    def test_book_update_url(self):
+        respond = reverse('book_update', kwargs={'pk': 1})
+        self.assertEqual(respond, '/1/update/')
+
+    def test_book_delete_url(self):
+        respond = reverse('book_delete', kwargs={'pk': 1})
+        self.assertEqual(respond, '/1/delete/')
