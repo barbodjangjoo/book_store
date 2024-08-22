@@ -1,0 +1,28 @@
+{% extends "_base.html" %}
+
+{% block page_title %}Authors List{% endblock page_title %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-9">
+            {% for author in authors %}
+                <div class="card shadow-sm my-3">
+                    <div class="card-body d-flex">
+                        <div class="mr-3">
+                            <img src="{{ author.image_url }}" class="img-fluid rounded" style="width: 80px; height: 80px; object-fit: cover;">
+                        </div>
+                        <div>
+                            <h5 class="card-title">{{author.name}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted small py-2">{{post.datetime_modified}}</h6>
+                            <p class="card-text py-3">
+                                {{author.bio}}
+                            </p>
+                            <a class="btn btn-sm btn-success" href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
