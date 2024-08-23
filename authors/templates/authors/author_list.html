@@ -17,9 +17,9 @@
                                 <h5 class="card-title">{{author.name}}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted small py-2">{{post.datetime_modified}}</h6>
                                 <p class="card-text py-3">
-                                    {{author.bio}}
+                                    {{author.bio|truncatewords:30}}
                                 </p>
-                                <a class="btn btn-sm btn-success" href="#">Read More</a>
+                                <a class="btn btn-sm btn-success" href="{% url "author_detail" author.id %}">Read More</a>
                             </div>
                         </div>
                     </div>
