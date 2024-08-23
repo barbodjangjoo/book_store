@@ -20,7 +20,8 @@
                     </div>
                     <div class="col-xs-12 col-md-6 text-center text-md-end mt-md-1 mt-4">
                         <h1>{{book.title}}<h1>
-                        <h5 class="small my-1"><span class="text-muted">{% translate "author" %}: </span>{{book.author}}</h5>
+                        <h5 class="small my-1"><a href="{% url "author_detail" book.author.pk %}"><span class="text-muted">{% translate "author" %}: </span>{{book.author}}</a></h5>
+                    
                     </div>
                     <div class="col-xs-12 col-md-3 d-flex flex-column">
                         <h3 class="align-self-center pt-2 text-muted align-self-md-end">
