@@ -3,17 +3,48 @@
 {% block page_title %}Author {{author.name}}{% endblock page_title %}
 
 {% block content %}
-<div class="container py-5">
-    <div class="row">
-      <div class="col-md-3">
-        <img src="{{ author.image.url }}" alt="Author Picture" class="img-fluid rounded">
-      </div>
-      <div class="col-md-9">
-        <div class="d-flex align-items-end mb-3">
-          <h1 class="me-auto">{{ author.name }}</h1>
-          <small class="text-muted">{{ author.birth_date }}</small>
+  <div class="container py-5">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="{{ author.image.url }}" alt="Author Picture" class="img-fluid rounded">
         </div>
-        <h5 class="mb-4">{{ author.bio }}</h5>
+        <div class="col-md-9">
+          <div class="d-flex align-items-end mb-3">
+            <h1 class="me-auto">{{ author.name }}</h1>
+            <small class="text-muted">{{ author.birth_date }}</small>
+          </div>
+          <h5 class="mb-4">{{ author.bio }}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Comments</h2>
+        <hr>
+        {% if comments %}
+          {% for comment in comments %}
+            <div class="comment mb-3">
+              <h5>{{ comment.author }} <small>{{ comment.created_at }}</small></h5>
+              <p>{{ comment.text }}</p>
+            </div>
+          {% endfor %}
+        {% else %}
+          <p>No comments yet.</p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Leave a Comment</h2>
+        <hr>
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="comment">Comment:</label>
+            <textarea class="form-control" id="comment" name="comment"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Post Comment</button>
+        </form>
       </div>
     </div>
   </div>
