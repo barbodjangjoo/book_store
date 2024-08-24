@@ -39,6 +39,11 @@
         </a>
             {% if user.is_staff %}
                 <a class="text-white" href="{% url "book_add" %}">{% translate "Add Book" %}</a>
+                <div class="mx-10">
+                    <span>|</span>
+                </div>
+                <a class="text-white" href="{% url "author_create" %}">{% translate "Add Author" %}</a>
+
             {% endif %}
             {% if user.is_authenticated %}
                     <div class="mx-2 text-white">{% translate "Welcome" %} {{user.username}}| <form method="post" action="{% url "account_logout" %}">{% csrf_token %}<button type="submit">{% translate "Logout" %}</button></form>
